@@ -16,6 +16,11 @@ public class EmployeeResource {
     @Autowired
     EmployeeRepository employeeRepository;
 
+    @GetMapping("/hello")
+    public String hello() {
+        return "Hello   world";
+    }
+
     @PostMapping("/register")
     public String register(@RequestBody Employee employee) {
         employeeRepository.save(employee);
